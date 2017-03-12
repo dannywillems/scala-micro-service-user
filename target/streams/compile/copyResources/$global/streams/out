@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/geekstay/Github/Personal/scala-micro-service-user/conf/application.conf,/home/geekstay/Github/Personal/scala-micro-service-user/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/geekstay/Github/Personal/scala-micro-service-user/conf/logback.xml,/home/geekstay/Github/Personal/scala-micro-service-user/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/geekstay/Github/Personal/scala-micro-service-user/conf/routes,/home/geekstay/Github/Personal/scala-micro-service-user/target/scala-2.11/classes/routes)[0m
