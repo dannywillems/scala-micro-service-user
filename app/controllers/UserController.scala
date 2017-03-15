@@ -4,15 +4,29 @@ import play.api.mvc._
 
 import play.api.libs.json.Json
 
-import play.api.{Configuration, Logger}
+import play.api.Logger
 
 import play.api.db.Database
 
-class UserController extends Controller
+import database.{UserDb}
+
+import javax.inject.Inject
+
+class UserController @Inject () (db : Database)
+    extends Controller
 {
   def create =
     Action { request ⇒
-      Ok("Created")
+      val json = request.body.asJson.get
+      val userid = UserDb.create(
+        db,
+        (json \ "main_email").as[String],
+        (json \ "password").as[String],
+        (json \ "firstname").as[String],
+        (json \ "lastname").as[String],
+        (json \ "avatar").as[String]
+      )
+      Ok(userid.toString)
     }
 
   /** Check if the given email and password match. */
@@ -29,6 +43,11 @@ class UserController extends Controller
   def update =
     Action { request ⇒
       Ok("Updated")
+    }
+
+  def update_password =
+    Action {
+      Ok("Password updated")
     }
 
   def user =
