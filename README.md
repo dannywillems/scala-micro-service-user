@@ -4,6 +4,12 @@ Micro service for basic user management through a REST API, written in Scala and
 using PostgreSQL.
 Users are identified by email.
 
+## Implementation choices.
+
+- The REST API doesn't give you access to the password. The password is never
+  returned. It implies that nobody can have access the passwords, even if your
+  API is opened.
+
 ## REST API
 
 - `POST /create`: create a user and return the generated ID.
