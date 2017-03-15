@@ -1,6 +1,17 @@
 # scala-micro-service-user
 
-Micro service for basic user management, written in Scala and using PostgreSQL.
+Micro service for basic user management through a REST API, written in Scala and
+using PostgreSQL.
+Users are identified by email.
+
+## REST API
+
+`POST /create`: create a user and return the generated ID.
+`GET /check`: check if the given email and password match.
+`GET /exists`: return true if the given email exists.
+`PUT /update`: update the given user information.
+`PUT /update_password`: update the password for the given user.
+`GET /user`: update the user with the given email.
 
 ## Configuration.
 
@@ -37,3 +48,14 @@ sbt ~Dconfig.file=my_project_test.conf ~run
 ### With a PostgreSQL container.
 
 ### Built-in PostgreSQL
+
+## TODO
+
+- [ ] User email as an unique identifier is maybe too restrictive. By the way, the
+  current implementation doesn't care about the validity of the email because
+  it's simply a string. We can imagine rename `email` to `identifier` or
+  something more general.
+- [ ] Add (optional) security things like JWT in the header or something to
+  identify the user of the API.
+  Security must be optional in the case of the developer doesn't want to have
+  security (for example during an hackathon).
