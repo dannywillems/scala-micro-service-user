@@ -6,12 +6,12 @@ Users are identified by email.
 
 ## REST API
 
-`POST /create`: create a user and return the generated ID.
-`GET /check`: check if the given email and password match.
-`GET /exists`: return true if the given email exists.
-`PUT /update`: update the given user information.
-`PUT /update_password`: update the password for the given user.
-`GET /user`: update the user with the given email.
+- `POST /create`: create a user and return the generated ID.
+- `GET /check`: check if the given email and password match.
+- `GET /exists`: return true if the given email exists.
+- `PUT /update`: update the given user information.
+- `PUT /update_password`: update the password for the given user.
+- `GET /user`: update the user with the given email.
 
 ## Configuration.
 
